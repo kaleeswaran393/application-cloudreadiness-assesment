@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+            Simple Sample App -
+        Dependencies
+    </title>
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="resources/css/windup.css" rel="stylesheet" media="screen">
+    <link href="resources/img/rhamt-icon-128.png" rel="shortcut icon" type="image/x-icon"/>
+
+</head>
+<body role="document">
+
+    <!-- Navbar -->
+    <div id="main-navbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="wu-navbar-header navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="wu-navbar-header">
+              <strong class="wu-navbar-header">Red Hat Application Migration Toolkit</strong>
+            </span>        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+            <li class="">
+                <a href="../index.html"><i class="glyphicon glyphicon-home"></i> All Applications</a>
+            </li>
+
+
+
+                <li class="">
+                    <a href="report_index_Simple_Sample_App.html">
+                        <i class="glyphicon glyphicon-dashboard"></i>
+                      Dashboard
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="migration_issues.html">
+                        <i class="glyphicon glyphicon-warning-sign"></i>
+                      Issues
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="ApplicationDetails_Simple_Sample_App.html">
+                        <i class="glyphicon glyphicon-th-list"></i>
+                      Application Details
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="techReport_Simple_Sample_App.html">
+                        <i class="fa fa-rocket"></i>
+                      Technologies
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="dependency_graph_report.html">
+                        <i class="glyphicon glyphicon-tree-deciduous"></i>
+                      Dependencies Graph
+                    </a>
+                </li>
+
+
+                <li class="active">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-retweet"></i>
+                      Dependencies
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="remotereport_Simple_Sample_App.html">
+                        <i class="glyphicon service-nav-logo"></i>
+                      Remote Services
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="ejbreport_Simple_Sample_App.html">
+                        <i class="glyphicon ejb-nav-logo"></i>
+                      EJBs
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="server_resources_Simple_Sample_App.html">
+                        <i class="glyphicon server-resource-nav-logo"></i>
+                      Server Resources
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="tattletale_Simple_Sample_App.html">
+                        <i class="glyphicon tattletale-nav-logo"></i>
+                      Tattletale
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="ignoredfiles_Simple_Sample_App.html">
+                        <i class="glyphicon glyphicon-eye-close"></i>
+                      Ignored Files
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="about_Simple_Sample_App.html">
+                        <i class="fa fa-question-circle"></i>
+                      About
+                    </a>
+                </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="#" class="feedback-nav-btn jiraFeedbackTrigger"><i class="glyphicon glyphicon-comment"></i> Send Feedback </a>
+</li>
+
+
+    <script type="text/javascript" src="https://issues.jboss.org/s/f215932e68571747ac58d0f5d554396f-T/en_US-r7luaf/6346/82/1.4.16/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&amp;collectorId=8b9e338b"></script>
+
+    <script type="text/javascript">
+
+    var FEEDBACK_JS_ADDED = false;
+    var FEEDBACK_FORM_TRIGGER = null;
+
+    function displayFeedbackForm() {
+        FEEDBACK_FORM_TRIGGER();
+    }
+
+    window.ATL_JQ_PAGE_PROPS = {
+        "triggerFunction": function(showCollectorDialog) {
+            FEEDBACK_FORM_TRIGGER = showCollectorDialog;
+        }
+    };
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+            jQuery(".jiraFeedbackTrigger").click(function(e) {
+                e.preventDefault();
+                displayFeedbackForm();
+            });
+    });
+    </script>
+    </ul>
+    <script type="text/javascript">
+        var script   = document.createElement("script");
+        script.type  = "text/javascript";
+            script.src   = "resources/js/navbar.js";
+        document.body.appendChild(script);
+    </script>
+        </div><!-- /.nav-collapse -->
+    </div>
+    <!-- / Navbar -->
+
+    <div class="container-fluid" role="main">
+        <div class="row">
+            <div class="page-header page-header-no-border">
+                <h1>
+                    <div class="main">Dependencies
+                    <i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement=right title="This report lists all found Java libraries embedded within the analyzed application."></i></div>
+                        <div class="path">simple-sample-app.ear</div>
+                </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container-fluid theme-showcase" role="main">
+
+            <div class="dependencies">
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="log4j-1.2.17.jar" class="panel-heading">
+                            <h3 class="panel-title">log4j-1.2.17.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="log4j-1.2.17.jar-maven">
+                                            <a id="log4j-1.2.17.jar-gav" href="http://search.maven.org/#search|ga|1|1:&quot;5af35056b4d257e4b64b9e8069c0746e8b08629f&quot;" target="_blank">log4j:log4j:1.2.17</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="log4j-1.2.17.jar-hash">5af35056b4d257e4b64b9e8069c0746e8b08629f</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="log4j-1.2.17.jar-version">1.2.17</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="log4j-1.2.17.jar-org">
+    Apache Software Foundation
+    http://www.apache.org
+  </dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="log4j-1.2.17.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/log4j-1.2.17.jar</li>
+                                            <li>simple-sample-app.ear/simple-sample-web.war/WEB-INF/lib/log4j-1.2.17.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="commons-lang-2.6.jar" class="panel-heading">
+                            <h3 class="panel-title">commons-lang-2.6.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="commons-lang-2.6.jar-maven">
+                                            <a id="commons-lang-2.6.jar-gav" href="http://search.maven.org/#search|ga|1|1:&quot;0ce1edb914c94ebc388f086c6827e8bdeec71ac2&quot;" target="_blank">commons-lang:commons-lang:2.6</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="commons-lang-2.6.jar-hash">0ce1edb914c94ebc388f086c6827e8bdeec71ac2</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="commons-lang-2.6.jar-version">2.6</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="commons-lang-2.6.jar-org">The Apache Software Foundation</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="commons-lang-2.6.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/simple-sample-web.war/WEB-INF/lib/commons-lang-2.6.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="jboss-ejb3-ext-api-2.1.0.jar" class="panel-heading">
+                            <h3 class="panel-title">jboss-ejb3-ext-api-2.1.0.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="jboss-ejb3-ext-api-2.1.0.jar-maven">
+                                            <a id="jboss-ejb3-ext-api-2.1.0.jar-gav" href="http://search.maven.org/#search|ga|1|1:&quot;7aa4098d9198d752c5d05b0ec958f3878c16957d&quot;" target="_blank">org.jboss.ejb3:jboss-ejb3-ext-api:2.1.0</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="jboss-ejb3-ext-api-2.1.0.jar-hash">7aa4098d9198d752c5d05b0ec958f3878c16957d</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="jboss-ejb3-ext-api-2.1.0.jar-version">2.1.0</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="jboss-ejb3-ext-api-2.1.0.jar-org">JBoss</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="jboss-ejb3-ext-api-2.1.0.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/jboss-ejb3-ext-api-2.1.0.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="javaee-api-7.0.jar" class="panel-heading">
+                            <h3 class="panel-title">javaee-api-7.0.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="javaee-api-7.0.jar-maven">
+                                            <a id="javaee-api-7.0.jar-gav" href="http://search.maven.org/#search|ga|1|1:&quot;51399f902cc27a808122edcbebfaa1ad989954ba&quot;" target="_blank">org.glassfish.main:javaee-api:4.0-SNAPSHOT</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="javaee-api-7.0.jar-hash">51399f902cc27a808122edcbebfaa1ad989954ba</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="javaee-api-7.0.jar-version">4.0-SNAPSHOT</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="javaee-api-7.0.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/javaee-api-7.0.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="activation-1.1.jar" class="panel-heading">
+                            <h3 class="panel-title">activation-1.1.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="activation-1.1.jar-hash">e6cb541461c2834bdea3eb920f1884d1eb508b50</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="activation-1.1.jar-version">1.1</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="activation-1.1.jar-org">Sun Microsystems, Inc.</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="activation-1.1.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/activation-1.1.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="javax.mail-1.5.0.jar" class="panel-heading">
+                            <h3 class="panel-title">javax.mail-1.5.0.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="javax.mail-1.5.0.jar-maven">
+                                            <a id="javax.mail-1.5.0.jar-gav" href="http://search.maven.org/#search|ga|1|1:&quot;ec2410fdf7e0a3022e7c2a2e6241039d1abc1e98&quot;" target="_blank">com.sun.mail:javax.mail:1.5.0</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="javax.mail-1.5.0.jar-hash">ec2410fdf7e0a3022e7c2a2e6241039d1abc1e98</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="javax.mail-1.5.0.jar-version">1.5.0</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="javax.mail-1.5.0.jar-org">Sun</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="javax.mail-1.5.0.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/javax.mail-1.5.0.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="simple-sample-web.war" class="panel-heading">
+                            <h3 class="panel-title">simple-sample-web.war</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="simple-sample-web.war-maven">
+                                            <a id="simple-sample-web.war-gav" href="http://search.maven.org/#search|ga|1|1:&quot;9b798cf98bb6f78c4697fdca5d2a09413ff10bc6&quot;" target="_blank">org.jboss.windup.test.apps.weblogic:simple-sample-weblogic-web:1.0.0-SNAPSHOT</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="simple-sample-web.war-hash">9b798cf98bb6f78c4697fdca5d2a09413ff10bc6</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="simple-sample-web.war-version">1.0.0-SNAPSHOT</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="simple-sample-web.war-org">JBoss</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="simple-sample-web.war-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/simple-sample-web.war</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-primary dependency">
+                        <div id="simple-sample-services.jar" class="panel-heading">
+                            <h3 class="panel-title">simple-sample-services.jar</h3>
+                        </div>
+                        <div class="panel-body">
+                            <dl class="traits dl-horizontal">
+                                    <dt class="trait">Maven coordinates:</dt>
+                                    <dd id="simple-sample-services.jar-maven">
+                                            <a id="simple-sample-services.jar-gav" href="http://search.maven.org/#search|ga|1|1:&quot;8cb1a42e4894b0f77f48c7385f3aafa8e70650cf&quot;" target="_blank">org.jboss.windup.test.apps.weblogic:simple-sample-weblogic-services:1.0.0-SNAPSHOT</a>
+                                    </dd>
+                                    <dt class="trait">SHA1 hash:</dt>
+                                    <dd id="simple-sample-services.jar-hash">8cb1a42e4894b0f77f48c7385f3aafa8e70650cf</dd>
+                                    <dt class="trait">Version:</dt>
+                                    <dd id="simple-sample-services.jar-version">1.0.0-SNAPSHOT</dd>
+                                    <dt class="trait">Organization:</dt>
+                                    <dd id="simple-sample-services.jar-org">JBoss</dd>
+                                <dt class="trait">Found at path:</dt>
+                                <dd>
+                                    <ul id="simple-sample-services.jar-paths" class="list-unstyled">
+                                            <li>simple-sample-app.ear/simple-sample-services.jar</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+            </div>
+
+        </div> <!-- /container -->
+    </div><!--/row-->
+
+
+<div style="text-align: left; font-size: small; color: gray; font-style: italic;">Page generated: Jan 23, 2019 9:33:41 PM</div>    </div><!-- /container main-->
+
+    <script src="resources/js/jquery-1.10.1.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script>$(document).ready(function(){$('[data-toggle="tooltip"]').tooltip();});</script>
+</body>
+</html>
